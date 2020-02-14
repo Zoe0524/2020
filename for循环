@@ -1,0 +1,33 @@
+#1. 计算100以内所有3的倍数的和（即：计算3、6、9 ... 96、99 的和）
+
+s=0
+for a in range(1,34):
+    a=a*3
+    s+=a
+print(s)
+
+#2. 分别输入高和宽两个整数，输出对应高度和宽度的矩形
+
+h=int(input('请输入高度：'))
+w=int(input('请输入宽度：'))
+for y in range(h):
+    for x in range(w):
+        print('*',end=' ')
+    print()
+   
+#3. 输出九九乘法口诀表
+       
+for i in range(1, 10):
+    for j in range(1,10):
+        print('%d x %d = %d' % ( i,j,i*j ))
+
+#4. 跳出循环
+
+nums = [23, 45, 8, 13, 50, 43, 21]
+sum = 0
+for n in nums:
+    sum+=n
+    if sum > 100:
+        break        
+print(sum)
+    
