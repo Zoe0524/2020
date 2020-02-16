@@ -1,0 +1,24 @@
+#1. 计算圆面积
+
+# math 模块中的 pi 属性是圆周率π
+import math
+
+# 圆面积公式 S = π * r * r
+r = 20
+
+# 计算半径为 r 的圆面积
+S = math.pi*math.pow(r,2)
+print(S)
+
+#2. 生成10个随机数，输出里面最大的数
+
+import random
+l=[]
+i=1
+while i<11:
+    num=random.randint(1,100)
+    l.append(num)
+    i+=1
+print(max(l))
+
+#3. 将第六课（while循环）练习1的猜数字小游戏中的数字用一个1-100之间的随机数来改写，并在猜中后输出猜了几轮猜中答案
