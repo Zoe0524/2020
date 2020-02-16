@@ -22,3 +22,22 @@ while i<11:
 print(max(l))
 
 #3. 将第六课（while循环）练习1的猜数字小游戏中的数字用一个1-100之间的随机数来改写，并在猜中后输出猜了几轮猜中答案
+
+import random
+num = random.randint(1,100)
+i=0
+print ('Guess what I think?')
+answer = int(input('>> '))   
+while True:
+    i+=1
+    if answer<num:
+        print ('too small!')
+        answer = int(input('>> '))
+    elif answer>num:
+        print ('too big!')
+        answer = int(input('>> '))
+    else:
+        print ('BINGO!')
+        break
+print('猜了几轮？%d'%i)
+
