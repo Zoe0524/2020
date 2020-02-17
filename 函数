@@ -1,0 +1,29 @@
+#1. 思考下面这段程序会输出什么并亲自试一试
+def func(x):
+    print (x)
+    return x+1
+
+x = 2
+print (func(x))
+
+输出2，3
+
+#2. 创建函数
+# 创建一个函数 func，有一个参数 param
+# 将输入参数的数值乘以2，作为返回值
+
+def func(param):
+    return param*2
+
+p = func(20)
+print(p)
+
+#3. 实现一个函数，输入参数是两个列表，输出返回值是两个列表元素合并并排序后的结果
+def func(x,y):
+    z=x+y
+    z.sort()
+    return z
+
+a=[1,5,3]
+b=[2,6,7,4]
+print(func(a,b))
