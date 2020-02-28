@@ -1,0 +1,15 @@
+import random
+num=random.randint(1,100)
+times=0
+bingo=False
+ 
+while bingo==False:
+    answer = int(input('请猜一个1-100的数字：')) 
+    times+=1
+    if answer<num:
+        print ('猜小了，再试试')
+    elif answer>num:
+        print ('猜大了，再试试')
+    else:
+        print ('猜对了，你一共猜了%d轮'%times)
+        bingo=True
