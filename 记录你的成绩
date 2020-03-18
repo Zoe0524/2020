@@ -32,7 +32,7 @@ while forever==False:
       
     again=input('是否继续游戏（输入y继续，其他退出')
     if again!='y':
-        result='%s %d %d %.2f'%(player_name,times,min_rounds,sum_rounds/times)
+        result='%s %d %d %.2f \n'%(player_name,times,min_rounds,sum_rounds/times)
         with open('D:\Files\game_one_user.txt','a') as f:
             f.write(result)
         print('退出游戏，欢迎下次再来')
