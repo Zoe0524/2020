@@ -1,0 +1,60 @@
+import random
+
+forever=False
+times=0
+min_rounds=1000
+sum_rounds=0
+result=0
+player_name=input('请输入你的名字：')
+
+f=open('D:\Files\game_one_user.txt')
+data=f.read()
+f.close()
+
+scores={}
+
+l=data.split()
+scores[l[0]]=l[1:]
+    
+score=scores.get(player_name)
+game_times=int(score[0])
+min_times=int(score[1])
+total_times=int(score[2])
+
+if score is None:
+    score=[0,0,0]
+
+print('%s，你已经玩了%d次，最少%d轮猜出答案，平均%.2f轮猜出答案'%(player_name,game_times,min_times,total_times/game_times))
+
+while forever==False:
+    times+=1
+    num=random.randint(1,100)
+    rounds=0
+    bingo=False
+ 
+    while bingo==False:
+        answer = int(input('请猜一个1-100的数字：')) 
+        rounds+=1
+    
+        if answer<num:
+            print ('猜小了，再试试')
+        elif answer>num:
+            print ('猜大了，再试试')
+        else:
+            print ('猜对了，你一共猜了%d轮'%rounds)
+            sum_rounds+=rounds
+            if min_rounds>rounds:
+                min_rounds=rounds
+            bingo=True
+
+    print('%s，你已经玩了%d次，最少%d轮猜出答案，平均%.2f轮猜出答案'%(player_name,times,min_rounds,sum_rounds/times ))
+       
+    again=input('是否继续游戏(输入y继续，其他退出)')
+    if again!='y':
+        result='%s %d %d %d \n'%(player_name,times,min_rounds,sum_rounds)
+
+        with open('D:\Files\game_one_user.txt','w') as f:
+            f.write(result)
+        
+        print('退出游戏，欢迎下次再来')
+        forever=True
